@@ -101,13 +101,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   currentIndex == 2
                       ? Column(
                           children: [
-                            const CustomFilledButton(
+                            CustomFilledButton(
                               text: 'Get Started',
+                              onPressed: (){
+                                Navigator.pushNamed(context, '/sign-up');
+                              },
                             ),
                             const SizedBox(
                               height: 30,
                             ),
-                            CustomeTextButton(
+                            CustomTextButton(
                               text: 'Sign In',
                               onPressed: () {
                                 Navigator.pushNamed(context, '/sign-in');

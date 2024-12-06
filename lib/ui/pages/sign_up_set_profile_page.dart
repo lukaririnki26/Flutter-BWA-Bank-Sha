@@ -3,8 +3,8 @@ import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpSetProfilePage extends StatelessWidget {
+  const SignUpSetProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Joun Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -45,44 +45,45 @@ class SignInPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomFormField(
-                  title: 'Email Address',
-                ),
-                const SizedBox(height: 16),
-                const CustomFormField(
-                  title: 'Password',
-                  obscureText: true,
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/img_profile.png'),
+                    ),
+                  ),
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
+                Text(
+                  'Sayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
+                const CustomFormField(
+                  title: 'Set PIN (6 digit number)',
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
                 CustomFilledButton(
-                  text: 'Sign In',
-                  onPressed: () {},
+                  text: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-set-ktp');
+                  },
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomTextButton(
-            text: 'Create New Account',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
-            },
           ),
         ],
       ),
