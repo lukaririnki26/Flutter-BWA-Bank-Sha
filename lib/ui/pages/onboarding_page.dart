@@ -110,11 +110,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             CustomeTextButton(
                               text: 'Sign In',
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const SignInPage()));
+                                Navigator.pushNamed(context, '/sign-in');
                               },
                             )
                           ],
