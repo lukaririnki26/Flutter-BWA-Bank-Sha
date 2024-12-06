@@ -70,7 +70,13 @@ class SignInPage extends StatelessWidget {
                 ),
                 CustomFilledButton(
                   text: 'Sign In',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home',
+                      (route) => false,
+                    );
+                  },
                 ),
               ],
             ),
